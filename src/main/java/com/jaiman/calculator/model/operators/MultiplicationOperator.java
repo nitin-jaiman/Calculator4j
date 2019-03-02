@@ -8,12 +8,12 @@ public class MultiplicationOperator implements Operator {
     private static final String identifier = "*";
     private static final int priority = 10;
 
-    public BigDecimal evlauate(Operand firstOperand, Operand secondOperand) {
-        return firstOperand.getValue().multiply(secondOperand.getValue());
+    public Operand evlauate(Operand firstOperand, Operand secondOperand) {
+        return new Operand(firstOperand.getValue().multiply(secondOperand.getValue()));
     }
 
     public boolean isHighPriority(Operator operator) {
-        return getPriority() <= operator.getPriority();
+        return getPriority() < operator.getPriority();
     }
 
     public int getPriority() {

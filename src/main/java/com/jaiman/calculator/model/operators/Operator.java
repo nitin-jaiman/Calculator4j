@@ -5,7 +5,7 @@ import com.jaiman.calculator.model.Operand;
 import java.math.BigDecimal;
 
 public interface Operator {
-    BigDecimal evlauate(Operand firstOperand, Operand secondOperand);
+    Operand evlauate(Operand firstOperand, Operand secondOperand);
 
     boolean isHighPriority(Operator operator);
 

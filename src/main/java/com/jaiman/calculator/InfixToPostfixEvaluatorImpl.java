@@ -38,9 +38,14 @@ public class InfixToPostfixEvaluatorImpl implements InfixToPostfixEvaluator {
                 throw new IllegalStateException("This type of operator or operand is not supported");
             }
         }
-        postfix.addAll(operatorStack);
+
+        while(!operatorStack.isEmpty()){
+            postfix.add(operatorStack.pop());
+        }
         return postfix;
     }
+
+
 
     private LinkedList<Operator> getOperatorsOfHigherPrecedenceFromStack(Operator operator) {
         LinkedList<Operator> operatorsFromStackOfHigherPrecedence = new LinkedList<>();

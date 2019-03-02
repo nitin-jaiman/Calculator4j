@@ -12,7 +12,7 @@ public class InfixToPostfixEvaluatorImplTest {
     public void evaluateTest() throws InternalOperationException {
         InfixToPostfixEvaluatorImpl infixToPostfixEvaluator = new InfixToPostfixEvaluatorImpl();
         LinkedList<Object> result = infixToPostfixEvaluator.evalautePostfix("3+5*6");
-        Assert.assertEquals("[3, 5, 6, +, *]", result.toString());
+        Assert.assertEquals("[3, 5, 6, *, +]", result.toString());
     }
 
 }
