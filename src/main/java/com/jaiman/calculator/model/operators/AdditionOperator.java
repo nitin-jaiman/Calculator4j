@@ -9,7 +9,7 @@ public class AdditionOperator implements Operator {
     private static final int priority = 20;
 
     public BigDecimal evlauate(Operand firstOperand, Operand secondOperand) {
-        return firstOperand.add(secondOperand);
+        return firstOperand.getValue().add(secondOperand.getValue());
     }
 
     public boolean isHighPriority(Operator operator) {
@@ -18,5 +18,10 @@ public class AdditionOperator implements Operator {
 
     public int getPriority() {
         return priority;
+    }
+
+    @Override
+    public String toString() {
+        return identifier;
     }
 }
